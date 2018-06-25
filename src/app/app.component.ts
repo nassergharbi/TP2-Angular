@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.POSTS = this.postService.POSTS;
   }
+
+
 }
 
  // export const POSTS: any[];
