@@ -7,17 +7,8 @@ import { PostService } from './services/post.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
-  POSTS: any[];
-
-  constructor(private postService: PostService) {  }
-
-  ngOnInit() {
-    this.POSTS = this.postService.POSTS;
-  }
-
-
+export class AppComponent {
+  constructor () {}
 }
 
  // export const POSTS: any[];

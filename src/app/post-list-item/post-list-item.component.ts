@@ -27,6 +27,6 @@ export class PostListItemComponent implements OnInit {
   }
 
   onRemovePost() { // 25
-    this.postService.removePost(this.indexOfPost );
+    this.postService.removePost(this.indexOfPost);
   }
 }
