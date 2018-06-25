@@ -1,0 +1,29 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.loveIts > 0 ,
+                'list-group-item-danger':  post.loveIts < 0}">
+  <!--'list-group-item-success': encore une classe Bootstrap, pour afficher le fond en vert-->
+
+  <div class="btn-block">
+    <span style="font-size:25px;">{{post.title}}</span>
+    <span style="float:right">{{post.created_at | date: 'short' | uppercase }}
+    <span class="badge badge-pill badge-primary">Likes : {{post.loveIts}}</span>
+    </span>
+
+  </div>
+
+  <p>{{post.content}}</p>
+
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" >
+    <button class="btn btn-success"
+            (click)="onIncrementLoveIts()">Love It !
+    </button>
+    <button class="btn btn-danger"
+            (click)="onDecrementLoveIts()">Don't love It !
+    </button>
+  </div>
+
+
+
+
+</li>
+<br/>
