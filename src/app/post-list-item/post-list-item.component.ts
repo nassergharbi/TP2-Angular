@@ -31,11 +31,8 @@ export class PostListItemComponent implements OnInit, OnDestroy {
     this.postService.emitPostSubject();
   }
 
-
   onIncrementLoveIts() {
-    //this.postService.incrementLoveIts(this.indexOfPost);
-    this.post.loveIts++;
-    console.log("onIncrementLoveIts");
+    this.postService.incrementLoveIts(this.indexOfPost);
   }
 
   onDecrementLoveIts() {
