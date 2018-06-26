@@ -17,4 +17,21 @@ export class PostService {
     return console.log(this.POSTS[index]);
   }
 
+  addPost(title: string , content: string, loveIts: number, created_at: Date) {
+    const postObject = {
+      //id: 0,
+      title: '',
+      content: '',
+      loveIts: 0,
+      created_at: new Date()
+    };
+    postObject.title = title;
+    postObject.content = content;
+    //postObject.id = this.POSTS[(this.POSTS.length - 1)].id + 1;
+    postObject.loveIts = loveIts;
+    postObject.created_at = created_at;
+
+    this.POSTS.push(postObject);
+    this.emitPostSubject();
+  }
 }
