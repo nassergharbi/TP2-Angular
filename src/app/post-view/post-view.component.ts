@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PostService} from '../services/post.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-post-view',
@@ -9,10 +10,16 @@ import {PostService} from '../services/post.service';
 export class PostViewComponent implements OnInit {
 
   POSTS: any[];
+  postSubscription: Subscription;
 
   constructor(private postService: PostService) {  }
 
   ngOnInit() {
-    this.POSTS = this.postService.POSTS;
+    this.postSubscription = this.postService.postSubject.subscribe(
+      (POSTS: any[]) => {
+        this.POSTS = POSTS;
+      }
+    );
+    this.postService.emitPostSubject();
   }
 }
