@@ -1,9 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import { Post } from './post'; // afin de pouvoir utiliser la classe Post
-import { PostService } from './services/post.service';
-
-//import { Observable } from 'rxjs/Observable';
-//import 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +8,3 @@ import { PostService } from './services/post.service';
 export class AppComponent {
   constructor () {}
 }
-
- // export const POSTS: any[];

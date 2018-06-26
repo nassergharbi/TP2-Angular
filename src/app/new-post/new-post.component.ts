@@ -19,7 +19,7 @@ export class NewPostComponent implements OnInit {
   onSubmit(form: NgForm) {
     const title = form.value['title'];
     const content = form.value['content'];
-    this.postService.addPost(title, content, 0, new Date());
-    this.router.navigate(['/posts']);
+    this.postService.addPost(title, content, 0, new Date()); // on ajoute le nouveau post au Service
+    this.router.navigate(['/posts']); // on redirige l'utilisateur vers la liste des posts
   }
 }
